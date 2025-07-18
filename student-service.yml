@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: student-service
+
+  server:
+    port: 8081
+
+  main:
+    web-application-type: servlet
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/microService?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    use-dns-for-fetching-service-urls: false
+    register-with-eureka: true
+    fetch-registry: true
